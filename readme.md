@@ -1,1 +1,2 @@
 Hay doc.
+Chào thầy.
