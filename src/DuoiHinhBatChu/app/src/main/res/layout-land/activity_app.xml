@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/bg">
+
+    <Button
+        android:text="Huong Dan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"
+        android:layout_marginStart="87dp"
+        android:layout_marginBottom="47dp"
+        android:id="@+id/huong_dan"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:text="Cai Dat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"
+        android:layout_marginStart="50dp"
+        android:id="@+id/cai_dat"
+        android:layout_alignBaseline="@+id/huong_dan"
+        android:layout_alignBottom="@+id/huong_dan"
+        android:layout_toEndOf="@+id/huong_dan"/>
+
+    <Button
+        android:text="Thong Tin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"
+        android:layout_marginStart="72dp"
+        android:id="@+id/thong_tin"
+        android:layout_marginBottom="11dp"
+        android:layout_alignBottom="@+id/cai_dat"
+        android:layout_toEndOf="@+id/cai_dat"/>
+
+    <Button
+        android:text="Bat Dau"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"
+        android:layout_marginBottom="41dp"
+        android:id="@+id/bat_dau"
+        android:layout_marginEnd="16dp"
+        android:layout_above="@+id/thong_tin"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>
