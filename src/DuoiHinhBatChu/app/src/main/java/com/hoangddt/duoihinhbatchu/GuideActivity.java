@@ -9,16 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-public class HuongDanActivity extends AppCompatActivity {
+public class GuideActivity extends AppCompatActivity {
 
-    private static final String TAG = "HuongDanActivity";
+    private static final String TAG = "GuideActivity";
     Button mBack, mNext, mPrev;
-    int []huongdan = new int[] {
-            R.drawable.hd1,
-            R.drawable.hd2,
-            R.drawable.hd3,
-            R.drawable.hd4,
-            R.drawable.hd5
+    int []guide = new int[] {
+            R.drawable.guide1,
+            R.drawable.guide2,
+            R.drawable.guide3,
+            R.drawable.guide4,
+            R.drawable.guide5
     };
     int index = 0;
 
@@ -29,7 +29,7 @@ public class HuongDanActivity extends AppCompatActivity {
         // remove name
         getSupportActionBar().hide();
 
-        setContentView(R.layout.activity_huong_dan);
+        setContentView(R.layout.activity_guide);
 
 
         mBack = (Button) findViewById(R.id.back);
@@ -38,7 +38,7 @@ public class HuongDanActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Back");
-                Intent intent = new Intent(HuongDanActivity.this, MainActivity.class);
+                Intent intent = new Intent(GuideActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -49,10 +49,10 @@ public class HuongDanActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Next");
-                RelativeLayout layout =(RelativeLayout)findViewById(R.id.huongdan);
-                if(index < huongdan.length - 1){
+                RelativeLayout layout =(RelativeLayout)findViewById(R.id.guide);
+                if(index < guide.length - 1){
                     index++;
-                    layout.setBackground(ResourcesCompat.getDrawable(getResources(), huongdan[index], null) );
+                    layout.setBackground(ResourcesCompat.getDrawable(getResources(), guide[index], null) );
                 }
             }
         });
@@ -63,10 +63,10 @@ public class HuongDanActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Prev");
-                RelativeLayout layout =(RelativeLayout)findViewById(R.id.huongdan);
+                RelativeLayout layout =(RelativeLayout)findViewById(R.id.guide);
                 if(index > 0){
                     index--;
-                    layout.setBackground(ResourcesCompat.getDrawable(getResources(), huongdan[index], null) );
+                    layout.setBackground(ResourcesCompat.getDrawable(getResources(), guide[index], null) );
                 }
 
             }

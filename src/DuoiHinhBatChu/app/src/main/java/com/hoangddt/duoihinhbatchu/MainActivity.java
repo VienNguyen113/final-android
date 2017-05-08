@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // do stuff here
-                Log.d(TAG, "Huong Dan called");
-                Intent intent = new Intent(MainActivity.this, HuongDanActivity.class);
+                Log.d(TAG, "Guide called");
+                Intent intent = new Intent(MainActivity.this, GuideActivity.class);
                 startActivity(intent);
             }
         });
