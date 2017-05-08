@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Info called");
+                Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(intent);
             }
         });
 
