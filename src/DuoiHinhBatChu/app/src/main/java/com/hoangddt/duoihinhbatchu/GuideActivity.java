@@ -57,7 +57,7 @@ public class GuideActivity extends AppCompatActivity {
             }
         });
 
-        mPrev = (Button) findViewById(R.id.prev);
+        mPrev = (Button) findViewById(R.id.music);
         mPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
