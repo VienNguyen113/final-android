@@ -29,6 +29,7 @@ public class ListGameplayActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_gameplay);
+        getSupportActionBar().hide();
 
         // get bundle
         questionType = getIntent().getIntExtra(StartActivity.QUESTION_TYPE_KEY, QuestionType.EASY);

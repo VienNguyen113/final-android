@@ -19,6 +19,7 @@ public class GameplayActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameplay);
+        getSupportActionBar().hide();
 
         // Retrieve views
         ImageView imvQuestion = (ImageView) findViewById(R.id.imvQuestion);
