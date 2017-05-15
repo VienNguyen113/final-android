@@ -1,4 +1,4 @@
-package com.hoangddt.duoihinhbatchu;
+package com.hoangddt.duoihinhbatchu.activity;
 
 
 import java.text.SimpleDateFormat;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.hoangddt.duoihinhbatchu.R;
 
 public class CountDownActivity extends Activity {
 

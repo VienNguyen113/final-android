@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/item_list_gameplay_imageWidth"
+    android:layout_height="@dimen/item_list_gameplay_imageHeight">
+
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/imvQuestion"
+        android:layout_width="@dimen/item_list_gameplay_imageWidth"
+        android:layout_height="@dimen/item_list_gameplay_imageHeight"
+        android:background="@drawable/shape_rounded_corner"
+        android:padding="5dp"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/imvTick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_check"
+        android:visibility="gone" />
+
+</RelativeLayout>

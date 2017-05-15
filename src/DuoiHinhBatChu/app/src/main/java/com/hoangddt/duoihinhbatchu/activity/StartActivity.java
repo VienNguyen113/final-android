@@ -1,16 +1,20 @@
-package com.hoangddt.duoihinhbatchu;
+package com.hoangddt.duoihinhbatchu.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
-public class StartActivity extends AppCompatActivity {
+import com.hoangddt.duoihinhbatchu.R;
+import com.hoangddt.duoihinhbatchu.entity.QuestionType;
 
+public class StartActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    Button mKhoiDong, mDemNguoc, mGheNong, mBack;
+    public static String QUESTION_TYPE_KEY = "QUESTION_TYPE_KEY";
+
+    Button btnEasyQuestion, btnMediumQuestion, btnHardQuestion, btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +33,8 @@ public class StartActivity extends AppCompatActivity {
 
 
         // Init and setting button
-        mBack = (Button) findViewById(R.id.back);
-        mBack.setOnClickListener(new View.OnClickListener() {
+        btnBack = (Button) findViewById(R.id.back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // do stuff here
@@ -40,36 +44,39 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        mKhoiDong = (Button) findViewById(R.id.khoidong);
-        mKhoiDong.setOnClickListener(new View.OnClickListener() {
+        btnEasyQuestion = (Button) findViewById(R.id.khoidong);
+        btnEasyQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // do stuff here
                 Log.d(TAG, "Khoi Dong called");
-//                Intent intent = new Intent(MainActivity.this, GuideActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(StartActivity.this, ListGameplayActivity.class);
+                intent.putExtra(QUESTION_TYPE_KEY, QuestionType.EASY);
+                startActivity(intent);
             }
         });
 
-        mDemNguoc = (Button) findViewById(R.id.demnguoc);
-        mDemNguoc.setOnClickListener(new View.OnClickListener() {
+        btnMediumQuestion = (Button) findViewById(R.id.demnguoc);
+        btnMediumQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Dem Nguoc called");
-//                Intent intent = new Intent(MainActivity.this, InfoActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(StartActivity.this, ListGameplayActivity.class);
+                intent.putExtra(QUESTION_TYPE_KEY, QuestionType.MEDIUM);
+                startActivity(intent);
             }
         });
 
-        mGheNong = (Button) findViewById(R.id.ghenong);
-        mGheNong.setOnClickListener(new View.OnClickListener() {
+        btnHardQuestion = (Button) findViewById(R.id.ghenong);
+        btnHardQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Ghe Nong called");
-//                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(StartActivity.this, ListGameplayActivity.class);
+                intent.putExtra(QUESTION_TYPE_KEY, QuestionType.HARD);
+                startActivity(intent);
             }
         });
     }

@@ -1,11 +1,15 @@
-package com.hoangddt.duoihinhbatchu;
+package com.hoangddt.duoihinhbatchu.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+
+import com.hoangddt.duoihinhbatchu.R;
+import com.hoangddt.duoihinhbatchu.database.RealmHelper;
+import com.hoangddt.duoihinhbatchu.util.DataUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // init data at first run
+        if (RealmHelper.getInstance(this).getQuestionBank() == null || !(RealmHelper.getInstance(this).getQuestionBank().getEasyQuestions().size() > 0)) {
+            DataUtils.getInstance(this).generateDataAtFirstRun();
+        }
+
         Log.d(TAG, "onCreate() called");
         //Remove title bar
         // this.requestWindowFeature(Window.FEATURE_NO_TITLE);
