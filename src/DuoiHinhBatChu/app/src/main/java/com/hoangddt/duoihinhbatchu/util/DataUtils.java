@@ -25,12 +25,22 @@ public class DataUtils {
     }
 
     public void generateDataAtFirstRun() {
-        String[] imageNames = context.getResources().getStringArray(R.array.list_image_questions);
-        String[] keyAnswers = context.getResources().getStringArray(R.array.list_key_answer);
+        String[] easyQuestionImages = context.getResources().getStringArray(R.array.easy_questions_images);
+        String[] easyKeyAnswers = context.getResources().getStringArray(R.array.easy_questions_key_answers);
+        String[] mediumQuestionImages = context.getResources().getStringArray(R.array.medium_questions_images);
+        String[] mediumKeyAnswers = context.getResources().getStringArray(R.array.medium_questions_key_answers);
+        String[] hardQuestionImages = context.getResources().getStringArray(R.array.hard_questions_images);
+        String[] hardKeyAnswers = context.getResources().getStringArray(R.array.hard_questions_key_answers);
 
         QuestionBank questionBank = new QuestionBank();
-        for (int i = 0; i < imageNames.length; i++) {
-            questionBank.getQuestions().add(new Question(imageNames[i], keyAnswers[i]));
+        for (int i = 0; i < easyQuestionImages.length; i++) {
+            questionBank.getEasyQuestions().add(new Question(easyQuestionImages[i], easyKeyAnswers[i]));
+        }
+        for (int i = 0; i < mediumQuestionImages.length; i++) {
+            questionBank.getMediumQuestions().add(new Question(mediumQuestionImages[i], mediumKeyAnswers[i]));
+        }
+        for (int i = 0; i < hardQuestionImages.length; i++) {
+            questionBank.getHardQuestions().add(new Question(hardQuestionImages[i], hardKeyAnswers[i]));
         }
 
         // add to database

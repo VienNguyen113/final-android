@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hoangddt.duoihinhbatchu.R;
-import com.hoangddt.duoihinhbatchu.StartActivity;
 import com.hoangddt.duoihinhbatchu.database.RealmHelper;
 import com.hoangddt.duoihinhbatchu.util.DataUtils;
 
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // init data at first run
-        if (RealmHelper.getInstance(this).getQuestionBank() == null || !(RealmHelper.getInstance(this).getQuestionBank().getQuestions().size() > 0)) {
+        if (RealmHelper.getInstance(this).getQuestionBank() == null || !(RealmHelper.getInstance(this).getQuestionBank().getEasyQuestions().size() > 0)) {
             DataUtils.getInstance(this).generateDataAtFirstRun();
         }
 

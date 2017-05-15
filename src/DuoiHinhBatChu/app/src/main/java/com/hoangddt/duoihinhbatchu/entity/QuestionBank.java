@@ -9,22 +9,42 @@ import io.realm.annotations.PrimaryKey;
 public class QuestionBank extends RealmObject {
     @PrimaryKey
     public String id;
-    public RealmList<Question> questions;
+    public RealmList<Question> easyQuestions;
+    public RealmList<Question> mediumQuestions;
+    public RealmList<Question> hardQuestions;
 
     public QuestionBank() {
         this.id = UUID.randomUUID().toString();
-        this.questions = new RealmList<>();
+        this.easyQuestions = new RealmList<>();
+        this.mediumQuestions = new RealmList<>();
+        this.hardQuestions = new RealmList<>();
     }
 
     public String getId() {
         return id;
     }
 
-    public RealmList<Question> getQuestions() {
-        return questions;
+    public RealmList<Question> getEasyQuestions() {
+        return easyQuestions;
     }
 
-    public void setQuestions(RealmList<Question> questions) {
-        this.questions = questions;
+    public void setEasyQuestions(RealmList<Question> easyQuestions) {
+        this.easyQuestions = easyQuestions;
+    }
+
+    public RealmList<Question> getMediumQuestions() {
+        return mediumQuestions;
+    }
+
+    public void setMediumQuestions(RealmList<Question> mediumQuestions) {
+        this.mediumQuestions = mediumQuestions;
+    }
+
+    public RealmList<Question> getHardQuestions() {
+        return hardQuestions;
+    }
+
+    public void setHardQuestions(RealmList<Question> hardQuestions) {
+        this.hardQuestions = hardQuestions;
     }
 }

@@ -28,13 +28,6 @@ public class RealmHelper {
         return realm;
     }
 
-    public void addQuestion(Question q) {
-        QuestionBank questionBank = realm.where(QuestionBank.class).findFirst();
-        realm.beginTransaction();
-        questionBank.getQuestions().add(q);
-        realm.commitTransaction();
-    }
-
     public Question getQuestion(String questionId) {
         return realm.where(Question.class).equalTo("id", questionId).findFirst();
     }
