@@ -41,7 +41,7 @@ public class GameplayActivity extends AppCompatActivity {
                 }
 
                 // update question
-                RealmHelper.getInstance(getApplication()).updateQuestionStatus(quesiontId);
+                RealmHelper.getInstance(getApplication()).updateQuestionStatus(quesiontId, answerKey);
             }
         });
 

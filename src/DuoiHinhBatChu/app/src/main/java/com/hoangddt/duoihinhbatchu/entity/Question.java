@@ -58,4 +58,12 @@ public class Question extends RealmObject {
     public void setUserAnswerKey(String userAnswerKey) {
         this.userAnswerKey = userAnswerKey;
     }
+
+    public boolean isUserRight() {
+        if (userAnswerKey == null) return false;
+        else {
+            if (answerKey.equals(userAnswerKey)) return true;
+            else return false;
+        }
+    }
 }

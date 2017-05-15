@@ -36,6 +36,12 @@ public class ListGamePlayAdapter extends RecyclerView.Adapter<ListGamePlayAdapte
         Picasso.with(context).load(FileUtils.getInstance(context).getResId(question.getImageName())).into(holder.imvQuestion);
         if (question.isPlayed()) {
             holder.imvTick.setVisibility(View.VISIBLE);
+            if (question.isUserRight()) {
+                holder.imvTick.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_check));
+            } else {
+                holder.imvTick.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_x_mark));
+            }
+
         } else {
             holder.imvTick.setVisibility(View.GONE);
         }
