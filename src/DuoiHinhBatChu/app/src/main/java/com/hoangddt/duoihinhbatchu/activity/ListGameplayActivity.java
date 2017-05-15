@@ -25,6 +25,9 @@ public class ListGameplayActivity extends AppCompatActivity {
     public static String BUNDLE_KEY_QUESTION_ID = "QUESTION_ID";
     private int questionType;
 
+    public List<Question> questionList = null;
+    AutofitRecyclerView rvListGameplay = null;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,22 +38,10 @@ public class ListGameplayActivity extends AppCompatActivity {
         questionType = getIntent().getIntExtra(StartActivity.QUESTION_TYPE_KEY, QuestionType.EASY);
 
         // get question list
-        final List<Question> questionList;
-        switch (questionType) {
-            case QuestionType.EASY:
-                questionList = RealmHelper.getInstance(this).getQuestionBank().getEasyQuestions();
-                break;
-            case QuestionType.MEDIUM:
-                questionList = RealmHelper.getInstance(this).getQuestionBank().getMediumQuestions();
-                break;
-            case QuestionType.HARD:
-                questionList = RealmHelper.getInstance(this).getQuestionBank().getHardQuestions();
-                break;
-            default: questionList = RealmHelper.getInstance(this).getQuestionBank().getEasyQuestions();
-        }
+        getQuestionList();
 
         // create recyclerview
-        AutofitRecyclerView rvListGameplay = (AutofitRecyclerView) findViewById(R.id.rvListGameplay);
+        rvListGameplay = (AutofitRecyclerView) findViewById(R.id.rvListGameplay);
         rvListGameplay.addItemDecoration(new MarginDecoration(this));
         rvListGameplay.setHasFixedSize(true);
         rvListGameplay.setAdapter(new ListGamePlayAdapter(questionList, this));
@@ -68,5 +59,33 @@ public class ListGameplayActivity extends AppCompatActivity {
 
             }
         }));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateRecyclerView();
+    }
+
+    private void updateRecyclerView() {
+        getQuestionList();
+        if (rvListGameplay != null) {
+            rvListGameplay.getAdapter().notifyDataSetChanged();
+        }
+    }
+
+    private void getQuestionList() {
+        switch (questionType) {
+            case QuestionType.EASY:
+                questionList = RealmHelper.getInstance(this).getQuestionBank().getEasyQuestions();
+                break;
+            case QuestionType.MEDIUM:
+                questionList = RealmHelper.getInstance(this).getQuestionBank().getMediumQuestions();
+                break;
+            case QuestionType.HARD:
+                questionList = RealmHelper.getInstance(this).getQuestionBank().getHardQuestions();
+                break;
+            default: questionList = RealmHelper.getInstance(this).getQuestionBank().getEasyQuestions();
+        }
     }
 }

@@ -32,7 +32,13 @@ public class ListGamePlayAdapter extends RecyclerView.Adapter<ListGamePlayAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Picasso.with(context).load(FileUtils.getInstance(context).getResId(questions.get(position).getImageName())).into(holder.imvQuestion);
+        Question question = questions.get(position);
+        Picasso.with(context).load(FileUtils.getInstance(context).getResId(question.getImageName())).into(holder.imvQuestion);
+        if (question.isPlayed()) {
+            holder.imvTick.setVisibility(View.VISIBLE);
+        } else {
+            holder.imvTick.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -42,10 +48,12 @@ public class ListGamePlayAdapter extends RecyclerView.Adapter<ListGamePlayAdapte
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imvQuestion;
+        ImageView imvTick;
 
         public ViewHolder(View v) {
             super(v);
             imvQuestion = (ImageView) v.findViewById(R.id.imvQuestion);
+            imvTick = (ImageView) v.findViewById(R.id.imvTick);
         }
     }
 }

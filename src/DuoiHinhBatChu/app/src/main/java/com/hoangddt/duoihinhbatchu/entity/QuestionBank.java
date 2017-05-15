@@ -8,10 +8,10 @@ import io.realm.annotations.PrimaryKey;
 
 public class QuestionBank extends RealmObject {
     @PrimaryKey
-    public String id;
-    public RealmList<Question> easyQuestions;
-    public RealmList<Question> mediumQuestions;
-    public RealmList<Question> hardQuestions;
+    private String id;
+    private RealmList<Question> easyQuestions;
+    private RealmList<Question> mediumQuestions;
+    private RealmList<Question> hardQuestions;
 
     public QuestionBank() {
         this.id = UUID.randomUUID().toString();

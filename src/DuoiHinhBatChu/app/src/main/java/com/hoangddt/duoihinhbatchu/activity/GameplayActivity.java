@@ -26,7 +26,7 @@ public class GameplayActivity extends AppCompatActivity {
         final EditText edtAnswer = (EditText) findViewById(R.id.edtAnswer);
         Button btnCheck = (Button) findViewById(R.id.btnCheck);
 
-        String quesiontId = getIntent().getStringExtra(ListGameplayActivity.BUNDLE_KEY_QUESTION_ID);
+        final String quesiontId = getIntent().getStringExtra(ListGameplayActivity.BUNDLE_KEY_QUESTION_ID);
         final Question question = RealmHelper.getInstance(this).getQuestion(quesiontId);
 
         imvQuestion.setImageDrawable(FileUtils.getInstance(this).getDrawable(question.getImageName()));
@@ -39,6 +39,9 @@ public class GameplayActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "SAI ROI", Toast.LENGTH_SHORT).show();
                 }
+
+                // update question
+                RealmHelper.getInstance(getApplication()).updateQuestionStatus(quesiontId);
             }
         });
 

@@ -35,4 +35,11 @@ public class RealmHelper {
     public QuestionBank getQuestionBank() {
         return realm.where(QuestionBank.class).findFirst();
     }
+
+    public void updateQuestionStatus(String questionId) {
+        Question question = realm.where(Question.class).equalTo("id", questionId).findFirst();
+        realm.beginTransaction();
+        question.setPlayed(true);
+        realm.commitTransaction();
+    }
 }

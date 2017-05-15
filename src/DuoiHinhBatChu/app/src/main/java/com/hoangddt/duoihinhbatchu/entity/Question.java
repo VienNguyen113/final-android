@@ -7,11 +7,11 @@ import io.realm.annotations.PrimaryKey;
 
 public class Question extends RealmObject {
     @PrimaryKey
-    public String id;
-    public String imageName;
-    public String answerKey;
-    public boolean isPlayed = false;
-    public String userAnswerKey = null;
+    private String id;
+    private String imageName;
+    private String answerKey;
+    private boolean isPlayed = false;
+    private String userAnswerKey = null;
 
     public Question() {
         this.id = UUID.randomUUID().toString();
