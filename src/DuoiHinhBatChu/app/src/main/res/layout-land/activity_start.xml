@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bat_dau">
+
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/back"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"/>
+
+    <Button
+        android:text="Khoi Dong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/back"
+        android:layout_marginBottom="46dp"
+        android:id="@+id/khoidong"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"/>
+
+    <Button
+        android:text="Ghe Nong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="11dp"
+        android:id="@+id/ghenong"
+        android:layout_alignBottom="@+id/demnguoc"
+        android:layout_toEndOf="@+id/demnguoc"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"/>
+
+    <Button
+        android:text="Dem nguoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:id="@+id/demnguoc"
+        android:textColor="@android:color/transparent"
+        android:background="@android:color/transparent"
+        android:layout_alignBottom="@+id/khoidong"
+        android:layout_toEndOf="@+id/khoidong"
+        android:layout_marginBottom="16dp"
+        android:elevation="0dp"/>
+</RelativeLayout>

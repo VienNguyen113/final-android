@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hoangddt.duoihinhbatchu.R;
+import com.hoangddt.duoihinhbatchu.StartActivity;
 import com.hoangddt.duoihinhbatchu.database.RealmHelper;
 import com.hoangddt.duoihinhbatchu.util.DataUtils;
 
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Start called");
-                Intent intent = new Intent(MainActivity.this, ListGameplayActivity.class);
+                Intent intent = new Intent(MainActivity.this, StartActivity.class);
                 startActivity(intent);
             }
         });
