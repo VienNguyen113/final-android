@@ -1,5 +1,6 @@
 package com.hoangddt.duoihinhbatchu;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // do stuff here
                 Log.d(TAG, "Huong Dan called");
+                Intent intent = new Intent(MainActivity.this, AppActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -63,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Start called");
+                Intent intent = new Intent(MainActivity.this, CountDownActivity.class);
+                startActivity(intent);
             }
         });
     }
