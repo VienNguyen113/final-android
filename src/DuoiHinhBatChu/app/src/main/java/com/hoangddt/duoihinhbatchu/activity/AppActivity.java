@@ -1,7 +1,9 @@
-package com.hoangddt.duoihinhbatchu;
+package com.hoangddt.duoihinhbatchu.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.hoangddt.duoihinhbatchu.R;
 
 /**
  * Created by hoangddt on 07/05/2017.

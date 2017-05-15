@@ -1,4 +1,4 @@
-package com.hoangddt.duoihinhbatchu;
+package com.hoangddt.duoihinhbatchu.activity;
 
 import android.content.Intent;
 import android.support.v4.content.res.ResourcesCompat;
@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+
+import com.hoangddt.duoihinhbatchu.R;
 
 public class GuideActivity extends AppCompatActivity {
 

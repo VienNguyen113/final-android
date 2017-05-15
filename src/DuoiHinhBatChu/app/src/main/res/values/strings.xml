@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">DuoiHinhBatChu</string>
     <string name="title_activity_setting">SettingActivity</string>
+
+    <!-- These lists must have the same size -->
+    <string-array name="list_image_questions">
+        <item>img_q_1</item>
+        <item>img_q_1</item>
+        <item>img_q_1</item>
+        <item>img_q_1</item>
+        <item>img_q_1</item>
+    </string-array>
+    <string-array name="list_key_answer">
+        <item>baocao</item>
+        <item>baocao</item>
+        <item>baocao</item>
+        <item>baocao</item>
+        <item>baocao</item>
+    </string-array>
 </resources>
