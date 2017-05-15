@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.hoangddt.duoihinhbatchu.R;
 import com.hoangddt.duoihinhbatchu.entity.Question;
 import com.hoangddt.duoihinhbatchu.util.FileUtils;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class ListGamePlayAdapter extends RecyclerView.Adapter<ListGamePlayAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.imvQuestion.setImageDrawable(FileUtils.getInstance(context).getDrawable(questions.get(position).getImageName()));
+        Picasso.with(context).load(FileUtils.getInstance(context).getResId(questions.get(position).getImageName())).into(holder.imvQuestion);
     }
 
     @Override

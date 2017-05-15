@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.hoangddt.duoihinhbatchu.util.AutofitRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rvListGameplay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvListGameplay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
+    android:background="@drawable/background_list_game"
+    android:clipToPadding="false"
+    android:padding="@dimen/item_margin" />
