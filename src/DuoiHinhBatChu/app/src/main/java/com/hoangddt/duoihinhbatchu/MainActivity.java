@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.util.Log;
 import android.widget.Button;
 
@@ -36,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // do stuff here
-                Log.d(TAG, "Huong Dan called");
-                Intent intent = new Intent(MainActivity.this, AppActivity.class);
+                Log.d(TAG, "Guide called");
+                Intent intent = new Intent(MainActivity.this, GuideActivity.class);
                 startActivity(intent);
             }
         });
@@ -48,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Info called");
+                Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Setting called");
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
             }
         });
 
