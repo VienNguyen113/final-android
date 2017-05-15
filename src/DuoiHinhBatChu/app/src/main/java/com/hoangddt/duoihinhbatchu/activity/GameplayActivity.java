@@ -32,7 +32,7 @@ public class GameplayActivity extends AppCompatActivity {
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String answerKey = edtAnswer.getText().toString().trim().replaceAll(" ","");
+                String answerKey = edtAnswer.getText().toString().trim().replaceAll(" ","").toLowerCase();
                 if (question.getAnswerKey().equals(answerKey)) {
                     Toast.makeText(getApplicationContext(), "DUNG ROI", Toast.LENGTH_SHORT).show();
                 } else {
