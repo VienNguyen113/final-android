@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // stuff here
                 Log.d(TAG, "Start called");
-                Intent intent = new Intent(MainActivity.this, CountDownActivity.class);
+                Intent intent = new Intent(MainActivity.this, StartActivity.class);
                 startActivity(intent);
             }
         });
